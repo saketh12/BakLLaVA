@@ -106,6 +106,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-path", type=str, default="facebook/opt-350m")
+    parser.add_argument("--message", type=str, default = "write a detailed caption for this image")
     parser.add_argument("--model-base", type=str, default=None)
     parser.add_argument("--image-file", type=str, required=True)
     parser.add_argument("--num-gpus", type=int, default=1)
