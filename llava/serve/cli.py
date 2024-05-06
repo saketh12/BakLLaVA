@@ -95,9 +95,12 @@ def main(args):
 
     outputs = tokenizer.decode(output_ids[0, input_ids.shape[1]:]).strip()
     conv.messages[-1][-1] = outputs
+    json_output = {"outputs": outputs}
+    with open('output.json', 'w') as f:
+        json.dump(json_output, f)
 
-    if args.debug:
-        print("\n", {"prompt": prompt, "outputs": outputs}, "\n")
+    # if args.debug:
+    #     print("\n", {"prompt": prompt, "outputs": outputs}, "\n")
 
 
 if __name__ == "__main__":
